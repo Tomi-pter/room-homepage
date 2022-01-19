@@ -33,13 +33,27 @@
 body {
     margin: 0;
     font-size: var(--font-size);
+    max-width: 100vw;
 }
 
 main {
     display: grid;
-    grid-template-columns: 28vw 28vw 8vw 28vw;
+    grid-template-columns: 1fr 1fr 9vw 1fr;
     grid-template-rows: 66.66vh 33.33vh;
     grid-template-areas: "header header aside aside""dark article article light";
+}
+
+h2 {
+    font-family: 'SB';
+    text-transform: uppercase;
+    font-size: 1.1em;
+    letter-spacing: .25em;
+}
+
+p {
+    font-size: .9em;
+    font-family: 'SM';
+    color: var(--dark-gray);
 }
 
 .header {
@@ -52,6 +66,7 @@ main {
     justify-content: flex-start;
     font-family: 'SM';
     text-transform: lowercase;
+    position: relative;
 }
 
 .header nav {
@@ -60,13 +75,15 @@ main {
 
 .header a {
     color: var(--white);
-    padding: 0 .75rem;
+    margin: 0 .75rem;
+    padding-bottom: .25rem;
     text-decoration: none;
+    border-bottom: 0 solid var(--white);
+    transition: all 250ms ease-in-out;
 }
 
 aside {
     grid-area: aside;
-    font-family: 'SM';
     padding: 3.5rem 4rem;
     position: relative;
 }
@@ -74,6 +91,23 @@ aside {
 aside h1 {
     font-family: 'SB';
     font-size: 2rem;
+}
+
+aside p {
+    margin-bottom: 1.5rem;
+}
+
+aside a {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .5rem;
+    font-family: 'SSB';
+    color: var(--black);
+}
+
+aside a::after {
+    content: url(images/icon-arrow.svg);
+    margin-left: 1.5rem;
 }
 
 .button-frame {
@@ -86,9 +120,10 @@ aside h1 {
 button {
     background-color: var(--black);
     border: none;
-    width: 4vw;
+    width: 4.39vw;
     margin: 0;
     padding: 1rem 0;
+    cursor: pointer;
 }
 
 .pic-1 {
@@ -97,8 +132,34 @@ button {
 
 article {
     grid-area: article;
+    padding: 3rem 2.5rem 0;
 }
 
 .pic-2 {
     grid-area: light;
+}
+
+.preImg {
+    max-width: 100%;
+}
+
+
+/*Active states*/
+
+.header a:hover,
+.header a:focus {
+    outline: none;
+    border-bottom: 2px solid var(--white);
+    transform-origin: center;
+}
+
+aside a:hover,
+aside a:focus {
+    outline: none;
+    opacity: .4;
+}
+
+button:hover,
+button:focus {
+    background-color: hsl(0, 0%, 33%);
 }
