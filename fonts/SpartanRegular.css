@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SpartanRegular';
+    src: url('fonts/SpartanRegular.eot');
+    src: url('fonts/SpartanRegular.eot') format('embedded-opentype'),
+         url('fonts/SpartanRegular.woff2') format('woff2'),
+         url('fonts/SpartanRegular.woff') format('woff'),
+         url('fonts/SpartanRegular.ttf') format('truetype'),
+         url('fonts/SpartanRegular.svg#SpartanRegular') format('svg');
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SpartanSemiBold';
+    src: url('fonts/SpartanSemiBold.eot');
+    src: url('fonts/SpartanSemiBold.eot') format('embedded-opentype'),
+         url('fonts/SpartanSemiBold.woff2') format('woff2'),
+         url('fonts/SpartanSemiBold.woff') format('woff'),
+         url('fonts/SpartanSemiBold.ttf') format('truetype'),
+         url('fonts/SpartanSemiBold.svg#SpartanSemiBold') format('svg');
+}

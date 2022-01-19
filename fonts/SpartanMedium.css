@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SpartanMedium';
+    src: url('fonts/SpartanMedium.eot');
+    src: url('fonts/SpartanMedium.eot') format('embedded-opentype'),
+         url('fonts/SpartanMedium.woff2') format('woff2'),
+         url('fonts/SpartanMedium.woff') format('woff'),
+         url('fonts/SpartanMedium.ttf') format('truetype'),
+         url('fonts/SpartanMedium.svg#SpartanMedium') format('svg');
+}
