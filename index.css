@@ -183,20 +183,23 @@ article {
 
 .header a:hover::after,
 .header a:focus::after {
-    outline: none;
     transform: scaleX(1);
     /*border-bottom: 2px solid var(--white);*/
     transform-origin: center;
 }
 
+.header a:focus {
+    outline: none;
+}
+
 aside a:hover,
 aside a:focus {
-    outline: none;
     opacity: .4;
 }
 
 button:hover,
 button:focus {
+    outline: none;
     background-color: hsl(0, 0%, 33%);
 }
 
