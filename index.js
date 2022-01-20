@@ -7,6 +7,7 @@ const nav = document.querySelector("nav");
 const hImg = document.querySelector(".header>img");
 const page = document.querySelector("html");
 const closeBtn = document.querySelector(".close");
+const main = document.querySelector("main");
 const btnArr = Array.from(btn);
 
 const slides = [{
@@ -34,18 +35,14 @@ btnArr[1].addEventListener("click", nextSlide);
 
 hamburger.addEventListener("click", () => {
     nav.classList.add("clicked");
-    hImg.style.display = "none";
-    headerFrame.style.padding = 0;
-    hamburger.style.display = "none";
     page.style.backgroundColor = "rgb(0, 0, 0, .6)";
+    main.classList.add("clicked");
 });
 
 closeBtn.addEventListener("click", () => {
     nav.classList.remove("clicked");
-    hImg.style.display = "block";
-    headerFrame.style.padding = "2rem 3rem 0";
-    hamburger.style.display = "block";
     page.style.backgroundColor = "rgb(0, 0, 0, 0)";
+    main.classList.remove("clicked");
 });
 
 function prevSlide() {
