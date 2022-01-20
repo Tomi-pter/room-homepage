@@ -92,8 +92,21 @@ nav {
     margin: 0 .75rem;
     padding-bottom: .25rem;
     text-decoration: none;
-    border-bottom: 0 solid var(--white);
-    transition: all 25ms ease-in-out;
+    position: relative;
+    /*border-bottom: 0 solid var(--white);*/
+    /*transition: all 25ms ease-in-out;*/
+}
+
+.header a::after {
+    background-color: var(--white);
+    bottom: -4px;
+    content: "";
+    height: 2px;
+    left: 0px;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.3s ease 0s;
+    width: 100%;
 }
 
 aside {
@@ -168,10 +181,11 @@ article {
 
 /*Active states*/
 
-.header a:hover,
-.header a:focus {
+.header a:hover::after,
+.header a:focus::after {
     outline: none;
-    border-bottom: 2px solid var(--white);
+    transform: scaleX(1);
+    /*border-bottom: 2px solid var(--white);*/
     transform-origin: center;
 }
 
