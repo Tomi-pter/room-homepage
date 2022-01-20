@@ -5,6 +5,8 @@ const headerFrame = document.querySelector(".header");
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("nav");
 const hImg = document.querySelector(".header>img");
+const page = document.querySelector("html");
+const closeBtn = document.querySelector(".close");
 const btnArr = Array.from(btn);
 
 const slides = [{
@@ -29,53 +31,97 @@ const slides = [{
 
 btnArr[0].addEventListener("click", prevSlide);
 btnArr[1].addEventListener("click", nextSlide);
+
 hamburger.addEventListener("click", () => {
     nav.classList.add("clicked");
     hImg.style.display = "none";
     headerFrame.style.padding = 0;
     hamburger.style.display = "none";
+    page.style.backgroundColor = "rgb(0, 0, 0, .6)";
+});
+
+closeBtn.addEventListener("click", () => {
+    nav.classList.remove("clicked");
+    hImg.style.display = "block";
+    headerFrame.style.padding = "2rem 3rem 0";
+    hamburger.style.display = "block";
+    page.style.backgroundColor = "rgb(0, 0, 0, 0)";
 });
 
 function prevSlide() {
-    if (headerFrame.classList.contains(`head${2}`)) {
-        head1.textContent = slides[1].firstH;
-        para.textContent = slides[1].text;
-        headerFrame.classList.add(`head${1}`);
-        headerFrame.classList.remove(`head${2}`);
-        console.log(headerFrame.classList);
-    } else if (headerFrame.classList.contains(`head${1}`)) {
-        head1.textContent = slides[0].firstH;
-        para.textContent = slides[0].text;
-        headerFrame.classList.add(`head${0}`);
-        headerFrame.classList.remove(`head${1}`);
-        console.log(headerFrame.classList);
-    } else if (headerFrame.classList.contains(`head${0}`)) {
-        head1.textContent = slides[2].firstH;
-        para.textContent = slides[2].text;
-        headerFrame.classList.add(`head${2}`);
-        headerFrame.classList.remove(`head${0}`);
-        console.log(headerFrame.classList);
+    let i = +headerFrame.id;
+    let newI = i;
+    console.log(i);
+
+    if (newI < 1) {
+        i = 3;
+        newI = i;
     }
+    i--;
+
+    headerFrame.id = i;
+    head1.textContent = slides[i].firstH;
+    para.textContent = slides[i].text;
+    headerFrame.setAttribute("class", `header head${i}`);
+    console.log(headerFrame.classList);
+    console.log(i);
+
+    //if (headerFrame.classList.contains(`head${2}`)) {
+    //    head1.textContent = slides[1].firstH;
+    //    para.textContent = slides[1].text;
+    //    headerFrame.classList.add(`head${1}`);
+    //    headerFrame.classList.remove(`head${2}`);
+    //    console.log(headerFrame.classList);
+    //} else if (headerFrame.classList.contains(`head${1}`)) {
+    //    head1.textContent = slides[0].firstH;
+    //    para.textContent = slides[0].text;
+    //    headerFrame.classList.add(`head${0}`);
+    //    headerFrame.classList.remove(`head${1}`);
+    //    console.log(headerFrame.classList);
+    //} else if (headerFrame.classList.contains(`head${0}`)) {
+    //    head1.textContent = slides[2].firstH;
+    //    para.textContent = slides[2].text;
+    //    headerFrame.classList.add(`head${2}`);
+    //    headerFrame.classList.remove(`head${0}`);
+    //    console.log(headerFrame.classList);
+    //}
 }
 
 function nextSlide() {
-    if (headerFrame.classList.contains(`head${0}`)) {
-        head1.textContent = slides[1].firstH;
-        para.textContent = slides[1].text;
-        headerFrame.classList.add(`head${1}`);
-        headerFrame.classList.remove(`head${0}`);
-        console.log(headerFrame.classList);
-    } else if (headerFrame.classList.contains(`head${1}`)) {
-        head1.textContent = slides[2].firstH;
-        para.textContent = slides[2].text;
-        headerFrame.classList.add(`head${2}`);
-        headerFrame.classList.remove(`head${1}`);
-        console.log(headerFrame.classList);
-    } else if (headerFrame.classList.contains(`head${2}`)) {
-        head1.textContent = slides[0].firstH;
-        para.textContent = slides[0].text;
-        headerFrame.classList.add(`head${0}`);
-        headerFrame.classList.remove(`head${2}`);
-        console.log(headerFrame.classList);
+    let i = +headerFrame.id;
+    let newI = i;
+    console.log(i);
+
+    if (newI > 1) {
+        i = -1;
+        newI = i;
     }
+    i++;
+
+    headerFrame.id = i;
+    head1.textContent = slides[i].firstH;
+    para.textContent = slides[i].text;
+    headerFrame.setAttribute("class", `header head${i}`);
+    console.log(headerFrame.classList);
+    console.log(i);
+
+    //if (headerFrame.classList.contains(`head${0}`)) {
+    //    head1.textContent = slides[1].firstH;
+    //    para.textContent = slides[1].text;
+    //    headerFrame.classList.add(`head${1}`);
+    //    headerFrame.classList.remove(`head${0}`);
+    //    console.log(headerFrame.classList);
+    //} else if (headerFrame.classList.contains(`head${1}`)) {
+    //    head1.textContent = slides[2].firstH;
+    //    para.textContent = slides[2].text;
+    //    headerFrame.classList.add(`head${2}`);
+    //    headerFrame.classList.remove(`head${1}`);
+    //    console.log(headerFrame.classList);
+    //} else if (headerFrame.classList.contains(`head${2}`)) {
+    //    head1.textContent = slides[0].firstH;
+    //    para.textContent = slides[0].text;
+    //    headerFrame.classList.add(`head${0}`);
+    //    headerFrame.classList.remove(`head${2}`);
+    //    console.log(headerFrame.classList);
+    //}
 }

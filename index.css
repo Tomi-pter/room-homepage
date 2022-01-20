@@ -82,8 +82,9 @@ p {
     background-size: 100% 100%;
 }
 
-.header nav {
+nav {
     margin: 0 2rem;
+    display: flex;
 }
 
 .header a {
@@ -160,6 +161,10 @@ article {
     display: none;
 }
 
+.close {
+    display: none;
+}
+
 
 /*Active states*/
 
@@ -225,17 +230,25 @@ button:focus {
     .hamburger {
         display: block;
     }
+    .close {
+        display: block;
+    }
     nav {
         display: none;
         width: 100vw;
-        height: 10vh;
+        height: 15vh;
     }
     nav.clicked {
-        display: unset;
+        display: flex;
         background-color: var(--white);
         margin: 0;
+        align-items: center;
+        justify-content: space-between;
     }
     nav.clicked a {
         color: var(--black);
+    }
+    nav.clicked .close {
+        margin-left: 3rem;
     }
 }
