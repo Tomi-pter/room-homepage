@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution on github](https://github.com/Tomi-pter/room-homepage.git)
+- Solution URL: [solution repo on github](https://github.com/Tomi-pter/room-homepage.git)
 - Live Site URL: [Live site URL here](https://tomi-home-landing.netlify.app)
 
 ## My process
