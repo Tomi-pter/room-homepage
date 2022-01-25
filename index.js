@@ -8,6 +8,8 @@ const hImg = document.querySelector(".header>img");
 const page = document.querySelector("html");
 const closeBtn = document.querySelector(".close");
 const main = document.querySelector("main");
+const dimmer = document.querySelector(".dim");
+
 const btnArr = Array.from(btn);
 
 const slides = [{
@@ -35,13 +37,13 @@ btnArr[1].addEventListener("click", nextSlide);
 
 hamburger.addEventListener("click", () => {
     nav.classList.add("clicked");
-    page.style.backgroundColor = "rgb(0, 0, 0, .6)";
+    dimmer.classList.add("clicked");
     main.classList.add("clicked");
 });
 
 closeBtn.addEventListener("click", () => {
     nav.classList.remove("clicked");
-    page.style.backgroundColor = "rgb(0, 0, 0, 0)";
+    dimmer.classList.remove("clicked");
     main.classList.remove("clicked");
 });
 
