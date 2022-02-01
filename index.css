@@ -46,12 +46,12 @@ main {
 h2 {
     font-family: 'SB';
     text-transform: uppercase;
-    font-size: 1.1em;
+    font-size: 1.3em;
     letter-spacing: .25em;
 }
 
 p {
-    font-size: .9em;
+    font-size: 1.1em;
     font-family: 'SM';
     color: var(--dark-gray);
 }
@@ -117,7 +117,7 @@ aside {
 
 aside h1 {
     font-family: 'SB';
-    font-size: 2rem;
+    font-size: 2.1rem;
 }
 
 aside p {
